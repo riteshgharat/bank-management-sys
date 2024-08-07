@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banking Management System</title>
+    <title >Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>This is banking Management System</h1>
-
-    <script type="module">
-        import Bank from "./backend/main.js";
-
-        // Example usage
-        const bank = new Bank();
-        bank.addCustomer(1, 'Alice', 1000);
-        bank.addCustomer(2, 'Bob', 500);
-        
-        bank.deposit(1, 200);
-        bank.withdraw(2, 100);
-        
-        console.log(bank.getCustomerInfo(1)); // Customer { id: 1, name: 'Alice', balance: 1200 }
-        console.log(bank.getCustomerInfo(2)); // Customer { id: 2, name: 'Bob', balance: 400 }
-        
-        bank.deleteCustomer(1);
-        console.log(bank.getCustomerInfo(2)); // Customer not found
-    </script>
+    <h1 id="heading">Banking System</h1>
+    <div id="form-container">
+        <h2>Create Account</h2>
+        <form id="customerForm">
+            <label for="accountId">Account ID:</label>
+            <input type="text" id="accountId" >
+            <label for="name">Name:</label>
+            <input type="text" id="name" >
+            <label for="initialDeposit">Initial Deposit:</label>
+            <input type="number" id="initialDeposit" >
+            <button id="btn" type="submit">Create Account</button>
+       
+        </form>
+    </div>
+    <div id="form-container">
+        <h2>Deposit Money</h2>
+        <form id="deposit-form">
+            <label for="depositAccountId">Account ID:</label>
+            <input type="text" id="depositAccountId" required>
+            <label for="depositAmount">Amount:</label>
+            <input type="number" id="depositAmount" required>
+            <button type="submit" onsubmit="dep()">Deposit</button>
+        </form>
+    </div>
+    <div id="form-container">
+        <h2>Withdraw Money</h2>
+        <form id="withdraw-form">
+            <label for="withdrawAccountId">Account ID:</label>
+            <input type="text" id="withdrawAccountId" required>
+            <label for="withdrawAmount">Amount:</label>
+            <input type="number" id="withdrawAmount" required>
+            <button type="submit" onsubmit="wdraw()">Withdraw</button>
+        </form>
+    </div>
+    <div id="form-container">
+        <h2>Check Balance</h2>
+        <form id="balance-form">
+            <label for="balanceAccountId">Account ID:</label>
+            <input type="text" id="balanceAccountId" required>
+            <button type="submit">Check Balance</button>
+        </form>
+        <p id="balance-result"></p>
+    </div>
+    
 </body>
+<script src="backend/main.js"></script>
 </html>

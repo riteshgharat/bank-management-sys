@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    
+}
+
+h2{
+    text-align: center;
+
+}
+
+#form-container {
+    display: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #000000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin: 5px 0;
+    font-size: larger;
+}
+
+input, button {
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+input.text{
+    font-weight: bold;
+}
+
+button{
+    margin: 20px;
+    padding: 10px;
+    width: 200px;
+    border-radius: 0px;
+}
